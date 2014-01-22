@@ -297,7 +297,3 @@ section {
     }
   }
 } 
-.hero.fadeout {
-  opacity: 0;
-  @include transition(0.3s opacity ease-out);
-}

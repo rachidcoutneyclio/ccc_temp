@@ -1295,9 +1295,3 @@ section {
   -webkit-transition: opacity 1s ease-out;
   opacity: 1;
   left: 0; }
-
-.hero.fadeout {
-  opacity: 0;
-  -webkit-transition: 0.3s opacity ease-out;
-  -moz-transition: 0.3s opacity ease-out;
-  transition: 0.3s opacity ease-out; }
