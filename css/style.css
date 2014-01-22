@@ -1098,12 +1098,12 @@ embed {
 img {
   -ms-interpolation-mode: bicubic; }
 
-.clearfix {
+.clearfix, .hero, section {
   *zoom: 1; }
-  .clearfix:before, .clearfix:after {
+  .clearfix:before, .hero:before, section:before, .clearfix:after, .hero:after, section:after {
     content: " ";
     display: table; }
-  .clearfix:after {
+  .clearfix:after, .hero:after, section:after {
     clear: both; }
 
 .hide {
@@ -1126,14 +1126,22 @@ select {
 
 h1, h2, h3, h4 {
   font-size: 48px;
+  line-height: 54px;
+  margin-bottom: 30px;
   font-family: "GibsonSemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal; }
+
+h2 {
+  font-size: 18px;
+  line-height: 1;
+  margin: 0; }
 
 .intro-sentence {
   font-size: 24px;
   font-size: 2.4rem;
   line-height: 30px;
-  line-height: 3rem; }
+  line-height: 3rem;
+  margin-bottom: 54px; }
 
 header {
   background: #0a7abd;
@@ -1151,7 +1159,9 @@ header {
     font-size: 16px;
     font-size: 1.6rem;
     text-transform: uppercase;
-    float: left; }
+    float: left;
+    line-height: 1;
+    margin: 0; }
   header ul {
     float: left; }
     header ul li {
@@ -1167,10 +1177,14 @@ header {
     padding-bottom: 0.3rem; }
     header a.register {
       float: right; }
+    header a:hover {
+      color: #2f4e70;
+      border-color: #2f4e70; }
 
 .hero {
   background: #0a7abd;
   text-align: center;
+  position: relative;
   color: #fff;
   padding-top: 162px;
   padding-bottom: 468px; }
@@ -1181,7 +1195,7 @@ header {
     opacity: 0;
     width: 100%;
     height: 363px;
-    background: url("../img/chi_city.png") 0 0 repeat-x; }
+    background: url("../img/chi_city.png") 0 0 repeat-x red; }
   .hero .gem {
     margin-bottom: 30px; }
   .hero h1, .hero h2 {
@@ -1193,15 +1207,75 @@ header {
     text-transform: uppercase;
     font-size: 20px;
     font-size: 2rem;
-    margin-bottom: 36px; }
+    margin-bottom: 36px;
+    letter-spacing: 0.09em; }
   .hero h1, .hero h2, .hero p, .hero img {
     opacity: 0; }
 
+section {
+  margin-bottom: 60px; }
+  section h1, section .intro-sentence {
+    text-align: center; }
+  section.speakers .row {
+    margin-bottom: 18px; }
+
+.speaker-box {
+  width: 241px;
+  float: left;
+  margin-left: 5px; }
+  .speaker-box:first-child {
+    margin-left: 0; }
+  .speaker-box:last-child {
+    float: right; }
+  .speaker-box .speaker-info {
+    background: #0a7abd;
+    padding: 12px 18px;
+    color: #fff; }
+    .speaker-box .speaker-info h1 {
+      font-size: 18px;
+      line-height: 30px;
+      margin: 0;
+      text-align: left; }
+
+#venue {
+  position: relative;
+  text-align: center;
+  background: url(../img/venue.jpg) 0 0 no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 60px 0; }
+  #venue #radison-blu {
+    position: relative;
+    display: block;
+    top: 50%;
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -199px;
+    margin-bottom: 348px; }
+  #venue h1 {
+    margin-bottom: 348px;
+    color: #fff; }
+  #venue h2 {
+    color: #fff; }
+
+#workshops .workshop img {
+  margin-bottom: 24px; }
+#workshops .workshop h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 24px; }
+#workshops .workshop p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px; }
+
 .page-load-fade-in .city-scape {
-  -webkit-transition: opacity 1s ease-out 0.5s, left 2s ease-out 0.5s;
+  -webkit-transition: opacity 1s ease-out 0.5s, left 1s ease-out 0.5s;
   opacity: 1;
   left: 0; }
-.page-load-fade-in h1, .page-load-fade-in h2, .page-load-fade-in p, .page-load-fade-in img {
+.page-load-fade-in .hero h1, .page-load-fade-in .hero h2, .page-load-fade-in .hero p, .page-load-fade-in .hero img {
   -webkit-transition: opacity 1s ease-out;
   opacity: 1;
   left: 0; }
