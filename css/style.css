@@ -1162,24 +1162,27 @@ header {
     float: left;
     line-height: 1;
     margin: 0; }
-  header ul {
-    float: left; }
-    header ul li {
-      display: block;
-      float: left;
-      margin-left: 20px;
-      margin-left: 2rem; }
   header a {
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 3px;
-    padding-bottom: 0.3rem; }
-    header a.register {
-      float: right; }
-    header a:hover {
-      color: #2f4e70;
-      border-color: #2f4e70; }
+    color: #fff; }
+
+nav ul {
+  float: left; }
+  nav ul li {
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-left: 2rem; }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 3px;
+  padding-bottom: 0.3rem; }
+  nav a.register {
+    float: right; }
+  nav a:hover {
+    color: #2f4e70;
+    border-color: #2f4e70; }
 
 .hero {
   background: #0a7abd;
@@ -1188,10 +1191,13 @@ header {
   color: #fff;
   padding-top: 162px;
   padding-bottom: 468px; }
+  @media screen and (min-width: 1400px) {
+    .hero {
+      padding-bottom: 252px; } }
   .hero .city-scape {
     position: absolute;
     bottom: 0;
-    left: -20px;
+    left: -50px;
     opacity: 0;
     width: 100%;
     height: 363px;
@@ -1211,31 +1217,33 @@ header {
     letter-spacing: 0.09em; }
   .hero h1, .hero h2, .hero p, .hero img {
     opacity: 0; }
+  .hero .intro-sentence {
+    position: relative;
+    z-index: 1; }
 
 section {
   margin-bottom: 60px; }
   section h1, section .intro-sentence {
     text-align: center; }
-  section.speakers .row {
-    margin-bottom: 18px; }
 
-.speaker-box {
-  width: 241px;
+#speakers .speaker-box {
+  width: 245px;
   float: left;
-  margin-left: 5px; }
-  .speaker-box:first-child {
-    margin-left: 0; }
-  .speaker-box:last-child {
+  padding: 0 5px;
+  margin-bottom: 18px; }
+  #speakers .speaker-box:last-child {
     float: right; }
-  .speaker-box .speaker-info {
+  #speakers .speaker-box .speaker-info {
     background: #0a7abd;
     padding: 12px 18px;
     color: #fff; }
-    .speaker-box .speaker-info h1 {
+    #speakers .speaker-box .speaker-info h1 {
       font-size: 18px;
       line-height: 30px;
       margin: 0;
       text-align: left; }
+#speakers.dont-float-last .speaker-box:last-child {
+  float: left; }
 
 #venue {
   position: relative;
@@ -1260,19 +1268,23 @@ section {
   #venue h2 {
     color: #fff; }
 
-#workshops .workshop img {
-  margin-bottom: 24px; }
-#workshops .workshop h2 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 24px; }
-#workshops .workshop p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 24px; }
+#workshops .workshop {
+  margin-bottom: 18px; }
+  #workshops .workshop img {
+    margin-bottom: 24px; }
+  #workshops .workshop h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 24px; }
+  #workshops .workshop p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 24px; }
+#workshops.dont-float-last .workshop:last-child {
+  float: left; }
 
 .page-load-fade-in .city-scape {
-  -webkit-transition: opacity 1s ease-out 0.5s, left 1s ease-out 0.5s;
+  -webkit-transition: opacity 1s ease-out 0.5s, left 1.5s ease-out;
   opacity: 1;
   left: 0; }
 .page-load-fade-in .hero h1, .page-load-fade-in .hero h2, .page-load-fade-in .hero p, .page-load-fade-in .hero img {
