@@ -1,0 +1,97 @@
+$blue: #0a7abd;
+$dark-blue: #2f4e70;
+
+/*--------------------------------------------------
+* TYPOGRAPHY
+*--------------------------------------------------*/
+$base-font-size: 10px; //used in the rem mixin and for declaring the root font-size on the html element.
+$sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$gibson-semibold: 'GibsonSemiBold', $sans-serif;
+$gibson-regular: 'GibsonRegular', $sans-serif;
+
+@mixin gibson-semibold {
+  font-family: $gibson-semibold;
+  font-weight: normal;
+  @extend .antialiased;
+}
+@mixin gibson-regular {
+  font-family: $gibson-regular;
+  font-weight: normal;
+  @extend .antialiased;
+}
+@mixin box-sizing($border-box: border-box) {
+  -webkit-box-sizing: $border-box;
+  -moz-box-sizing: $border-box;
+  -ms-box-sizing: $border-box;
+  box-sizing: $border-box;
+}
+@mixin box-shadow($boxshadow) {
+  box-shadow: $boxshadow;
+  -webkit-box-shadow: $boxshadow;
+  -moz-box-shadow: $boxshadow;
+}
+@mixin border-radius($topleft: 2px, $topright: $topleft, $bottomright: $topleft, $bottomleft: $topleft) {
+  -ms-border-radius: $topleft;
+  -moz-border-radius: $topleft;
+  -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+  border-radius: $topleft $topright $bottomright $bottomleft;
+}
+@mixin transition($transition:0.1s all ease-out) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  transition: $transition;
+} 
+@mixin user-select($user-select:none) {
+  -webkit-touch-callout: $user-select;
+  -webkit-user-select: $user-select;
+  -khtml-user-select: $user-select;
+  -moz-user-select: $user-select;
+  -ms-user-select: $user-select;
+  user-select: $user-select;
+}
+@mixin opacity($opacity) {
+  filter: alpha(opactiy=($opacity * 100));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity * 100})";
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
+//Use this mixin to automatically output px fallback values for your rems.
+//Mixin taken from http://davidensinger.com/2013/03/using-rems-with-sass/
+@mixin rem($property, $values) {
+  // Create a couple of empty lists as output buffers.
+  $font-size: $base-font-size;
+  $px-values: ();
+  $rem-values: ();
+  // Loop through the $values list
+  @each $value in $values {
+    // For each property value, if it's in rem or px, derive both rem and
+    // px values for it and add those to the end of the appropriate buffer.
+    // Ensure all pixel values are rounded to the nearest pixel.
+    @if $value == 0 or $value == 0px {
+      // 0 -- use it without a unit
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      // px value given - calculate rem value from font-size
+      $new-rem-value: $value / $font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+      // % value given - don't add px or rem
+      $px-values: join($px-values, #{$value});
+      $rem-values: join($rem-values, #{$value});
+    } @else if $value == auto {
+      // auto - don't add px or rem
+      $px-values: join($px-values, auto);
+      $rem-values: join($rem-values, auto);
+    } @else {
+      // unitless value - use those directly as rem and calculate the px-fallback
+      $px-values: join($px-values, round($value * $font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+  // output the converted rules
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}

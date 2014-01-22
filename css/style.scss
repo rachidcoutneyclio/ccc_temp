@@ -1,0 +1,138 @@
+@import "partials/reset";
+@import "partials/grid";
+@import "partials/mixins_and_variables";
+
+@font-face {
+  font-family: 'GibsonRegular';
+  src: url('../fonts/gibson-regular-webfont.eot');
+  src: url('../fonts/gibson-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gibson-regular-webfont.woff') format('woff'),
+       url('../fonts/gibson-regular-webfont.ttf') format('truetype'),
+       url('../fonts/gibson-regular-webfont.svg#../fonts/gibsonregular') format('svg');
+}
+@font-face {
+  font-family: 'GibsonSemiBold';
+  src: url('../fonts/gibson-semibold-webfont.eot');
+  src: url('../fonts/gibson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gibson-semibold-webfont.woff') format('woff'),
+       url('../fonts/gibson-semibold-webfont.ttf') format('truetype'),
+       url('../fonts/gibson-semibold-webfont.svg#gibson_lightbold') format('svg');
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+html {
+  font-size: $base-font-size;
+}
+body {
+  font-size: 160%; 
+}
+body {
+  background: white;
+  color: #222222;
+  padding: 0;
+  margin: 0;
+  @include gibson-regular;
+  line-height: 1;
+  position: relative;
+  cursor: default; 
+}
+a:hover {
+  cursor: pointer; 
+}
+img,
+object,
+embed {
+  max-width: 100%;
+  height: auto; 
+}
+object,
+embed {
+  height: 100%; 
+}
+
+img {
+  -ms-interpolation-mode: bicubic; 
+}
+.clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  } 
+}
+.hide {
+  display: none; 
+}
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+}
+img {
+  display: inline-block;
+  vertical-align: middle; 
+}
+textarea {
+  height: auto;
+  min-height: 50px; 
+}
+select {
+  width: 100%; 
+}
+h1, h2, h3, h4 {
+  @extend %header;
+  font-size: 48px;
+  @include gibson-semibold;
+}
+.intro-sentence {
+  @include rem(font-size, 24px);
+  @include rem(line-height, 30px);
+}
+
+header {
+  background: $blue;
+  @include rem(padding, 18px 0);
+  color: #fff;
+  display: fixed;
+  @include gibson-semibold;
+  h1 {
+    @include rem(font-size, 16px);
+    text-transform: uppercase;
+    float: left;
+  }
+  ul {
+    float: left;
+    li {
+      display: block;
+      float: left;
+      @include rem(margin-left, 20px)
+    }
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+    @include rem(padding-bottom, 3px);
+    &.register {
+      float: right;
+    }
+  }
+}
+
+.hero {
+  background: $blue;
+  color: #fff;
+  h2 {
+    color: $dark-blue;
+    text-transform: uppercase;
+    @include rem(font-size, 20px);
+  }
+}
