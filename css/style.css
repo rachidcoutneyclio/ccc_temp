@@ -1152,7 +1152,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 10;
   font-family: "GibsonSemiBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal; }
   header h1 {
@@ -1190,7 +1190,11 @@ nav a {
   position: relative;
   color: #fff;
   padding-top: 162px;
-  padding-bottom: 468px; }
+  padding-bottom: 468px;
+  opacity: 1;
+  -webkit-transition: 0.4s opacity ease-out;
+  -moz-transition: 0.4s opacity ease-out;
+  transition: 0.4s opacity ease-out; }
   @media screen and (min-width: 1400px) {
     .hero {
       padding-bottom: 252px; } }
@@ -1291,3 +1295,9 @@ section {
   -webkit-transition: opacity 1s ease-out;
   opacity: 1;
   left: 0; }
+
+.hero.fadeout {
+  opacity: 0;
+  -webkit-transition: 0.3s opacity ease-out;
+  -moz-transition: 0.3s opacity ease-out;
+  transition: 0.3s opacity ease-out; }

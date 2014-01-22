@@ -10,4 +10,12 @@ $(function(){
   if (workshop_length % 4 != 0) {
     $("#workshops").addClass('dont-float-last');
   }
+
+      $(window).scroll(function () {
+	      if ($(document).scrollTop() > 300) {
+	        $(".hero").addClass("fadeout");
+	      } else {
+	        $(".hero").removeClass("fadeout");
+	      }
+	    });
 });
