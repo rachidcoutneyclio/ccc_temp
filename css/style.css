@@ -1080,7 +1080,9 @@ body {
   font-weight: normal;
   line-height: 1;
   position: relative;
-  cursor: default; }
+  cursor: default;
+  overflow: hidden;/*To hide horizontal scroller during the animation*/
+  }
 
 a:hover {
   cursor: pointer; }
@@ -1295,3 +1297,52 @@ section {
   -webkit-transition: opacity 1s ease-out;
   opacity: 1;
   left: 0; }
+
+
+
+/*cloud animations ooOOooOooo!!*/
+.cloud {
+	position: absolute;
+	overflow: hidden;
+}
+
+.x1 {
+	top: 140px;
+	-webkit-animation: moveclouds 55s linear infinite;
+	-moz-animation: moveclouds 55s linear infinite;
+	-o-animation: moveclouds 55s linear infinite;
+}
+
+.x2 {
+	top: 290px;
+	left: -300px;
+	-webkit-animation: moveclouds 85s linear infinite;
+	-moz-animation: moveclouds 85s linear infinite;
+	-o-animation: moveclouds 85s linear infinite;
+}
+
+.x3 {
+	left: -50px; top: 530px;
+	-webkit-animation: moveclouds 30s linear infinite;
+	-moz-animation: moveclouds 30s linear infinite;
+	-o-animation: moveclouds 30s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: -10%;opacity: 0}
+	10% {opacity: 1;}
+	90% {opacity: 0;}
+	100% {margin-left: 100%;opacity: 0}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: -10%;opacity: 0}
+	10% {opacity: 1;}
+	90% {opacity: 0;}
+	100% {margin-left: 100%;opacity: 0}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: -10%;opacity: 0}
+	10% {opacity: 1;}
+	90% {opacity: 0;}
+	100% {margin-left: 100%;opacity: 0}
+}
