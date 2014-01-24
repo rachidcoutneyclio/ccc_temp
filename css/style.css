@@ -1081,7 +1081,6 @@ body {
   line-height: 1;
   position: relative;
   cursor: default;
-  overflow: hidden;/*To hide horizontal scroller during the animation*/
   }
 
 a:hover {
